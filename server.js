@@ -47,6 +47,17 @@ app.post('/login',function(req,res){
     }
 })
 
+app.post('/create',function(req,res){
+    const mockUsername=req.body.username;
+    mockUserData.push({name:mockUsername});
+
+    res.json({
+		success: true,
+		message: 'successfully got users. Nice!',
+		users: mockUserData
+	})   
+})
+
 app.listen(8000,function(){
     console.log("server is running")
     })
